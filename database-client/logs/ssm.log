@@ -203,4 +203,92 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve resource locati
  [INFO] [2017-12-27 17:54:06][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
  [INFO] [2017-12-27 17:54:06][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
  [INFO] [2017-12-27 17:54:06][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 573 ms
+ [INFO] [2017-12-29 21:44:45][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2017-12-29 21:44:45][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Dec 29 21:44:45 CST 2017]; root of context hierarchy
+ [INFO] [2017-12-29 21:44:46][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+ [INFO] [2017-12-29 21:44:46][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-dao.xml]
+ [INFO] [2017-12-29 21:44:46][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-db.xml]
+ [INFO] [2017-12-29 21:44:46][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-tx.xml]
+ [WARN] [2017-12-29 21:44:46][org.mybatis.spring.mapper.ClassPathMapperScanner]No MyBatis mapper was found in '[cn.upc.database.dao]' package. Please check your configuration.
+ [INFO] [2017-12-29 21:44:46][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2017-12-29 21:44:46][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 792 ms
+ [INFO] [2017-12-29 21:44:46][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2017-12-29 21:44:46][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Fri Dec 29 21:44:46 CST 2017]; parent: Root WebApplicationContext
+ [INFO] [2017-12-29 21:44:46][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-mvc.xml]
+ [INFO] [2017-12-29 21:44:47][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+ [INFO] [2017-12-29 21:44:47][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 702 ms
+ [INFO] [2017-12-29 21:50:07][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2017-12-29 21:50:07][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Dec 29 21:50:07 CST 2017]; root of context hierarchy
+ [INFO] [2017-12-29 21:50:07][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+ [INFO] [2017-12-29 21:50:07][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-dao.xml]
+ [INFO] [2017-12-29 21:50:08][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-db.xml]
+ [INFO] [2017-12-29 21:50:08][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-tx.xml]
+ [WARN] [2017-12-29 21:50:08][org.mybatis.spring.mapper.ClassPathMapperScanner]No MyBatis mapper was found in '[cn.upc.database.dao]' package. Please check your configuration.
+ [INFO] [2017-12-29 21:50:08][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2017-12-29 21:50:08][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 648 ms
+ [INFO] [2017-12-29 21:50:08][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2017-12-29 21:50:08][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Fri Dec 29 21:50:08 CST 2017]; parent: Root WebApplicationContext
+ [INFO] [2017-12-29 21:50:08][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-mvc.xml]
+ [INFO] [2017-12-29 21:50:08][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+ [INFO] [2017-12-29 21:50:09][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 657 ms
+ [INFO] [2017-12-29 21:51:57][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2017-12-29 21:51:57][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Dec 29 21:51:57 CST 2017]; root of context hierarchy
+ [INFO] [2017-12-29 21:51:57][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+ [INFO] [2017-12-29 21:51:57][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-dao.xml]
+ [INFO] [2017-12-29 21:51:57][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-db.xml]
+ [INFO] [2017-12-29 21:51:58][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-tx.xml]
+ [WARN] [2017-12-29 21:51:58][org.mybatis.spring.mapper.ClassPathMapperScanner]No MyBatis mapper was found in '[cn.upc.database.dao]' package. Please check your configuration.
+ [INFO] [2017-12-29 21:51:58][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2017-12-29 21:51:58][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 648 ms
+ [INFO] [2017-12-29 21:51:58][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2017-12-29 21:51:58][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Fri Dec 29 21:51:58 CST 2017]; parent: Root WebApplicationContext
+ [INFO] [2017-12-29 21:51:58][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-mvc.xml]
+ [INFO] [2017-12-29 21:51:58][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/auth/adminLogin],methods=[GET],params=[],headers=[],consumes=[],produces=[appliction/json],custom=[]}" onto public cn.upc.database.utils.ResultData<java.util.Map<java.lang.String, java.lang.Integer>> cn.upc.database.controller.LoginController.adminLogin()
+ [INFO] [2017-12-29 21:51:58][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+ [INFO] [2017-12-29 21:51:59][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 698 ms
+ [INFO] [2017-12-29 21:55:43][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2017-12-29 21:55:43][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Dec 29 21:55:43 CST 2017]; root of context hierarchy
+ [INFO] [2017-12-29 21:55:43][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+ [INFO] [2017-12-29 21:55:43][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-dao.xml]
+ [INFO] [2017-12-29 21:55:43][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-db.xml]
+ [INFO] [2017-12-29 21:55:43][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-tx.xml]
+ [WARN] [2017-12-29 21:55:43][org.mybatis.spring.mapper.ClassPathMapperScanner]No MyBatis mapper was found in '[cn.upc.database.dao]' package. Please check your configuration.
+ [INFO] [2017-12-29 21:55:43][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2017-12-29 21:55:43][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 656 ms
+ [INFO] [2017-12-29 21:55:43][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2017-12-29 21:55:43][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Fri Dec 29 21:55:43 CST 2017]; parent: Root WebApplicationContext
+ [INFO] [2017-12-29 21:55:43][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-mvc.xml]
+ [INFO] [2017-12-29 21:55:44][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/auth/adminLogin],methods=[GET],params=[],headers=[],consumes=[],produces=[appliction/json],custom=[]}" onto public cn.upc.database.utils.ResultData<java.util.Map<java.lang.String, java.lang.Integer>> cn.upc.database.controller.LoginController.adminLogin()
+ [INFO] [2017-12-29 21:55:44][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+ [INFO] [2017-12-29 21:55:44][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 1024 ms
+ [INFO] [2017-12-29 21:57:27][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2017-12-29 21:57:27][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Dec 29 21:57:27 CST 2017]; root of context hierarchy
+ [INFO] [2017-12-29 21:57:27][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+ [INFO] [2017-12-29 21:57:28][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-dao.xml]
+ [INFO] [2017-12-29 21:57:28][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-db.xml]
+ [INFO] [2017-12-29 21:57:28][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-tx.xml]
+ [WARN] [2017-12-29 21:57:28][org.mybatis.spring.mapper.ClassPathMapperScanner]No MyBatis mapper was found in '[cn.upc.database.dao]' package. Please check your configuration.
+ [INFO] [2017-12-29 21:57:28][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2017-12-29 21:57:28][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 942 ms
+ [INFO] [2017-12-29 21:57:28][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2017-12-29 21:57:28][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Fri Dec 29 21:57:28 CST 2017]; parent: Root WebApplicationContext
+ [INFO] [2017-12-29 21:57:28][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-mvc.xml]
+ [INFO] [2017-12-29 21:57:29][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/auth/adminLogin],methods=[GET],params=[],headers=[],consumes=[],produces=[appliction/json],custom=[]}" onto public cn.upc.database.utils.ResultData<java.util.Map<java.lang.String, java.lang.Integer>> cn.upc.database.controller.LoginController.adminLogin()
+ [INFO] [2017-12-29 21:57:29][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+ [INFO] [2017-12-29 21:57:29][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 1318 ms
+ [INFO] [2017-12-29 21:58:39][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO] [2017-12-29 21:58:39][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Dec 29 21:58:39 CST 2017]; root of context hierarchy
+ [INFO] [2017-12-29 21:58:39][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+ [INFO] [2017-12-29 21:58:39][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-dao.xml]
+ [INFO] [2017-12-29 21:58:39][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-db.xml]
+ [INFO] [2017-12-29 21:58:39][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-tx.xml]
+ [WARN] [2017-12-29 21:58:39][org.mybatis.spring.mapper.ClassPathMapperScanner]No MyBatis mapper was found in '[cn.upc.database.dao]' package. Please check your configuration.
+ [INFO] [2017-12-29 21:58:39][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+ [INFO] [2017-12-29 21:58:39][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 692 ms
+ [INFO] [2017-12-29 21:58:39][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+ [INFO] [2017-12-29 21:58:39][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Fri Dec 29 21:58:39 CST 2017]; parent: Root WebApplicationContext
+ [INFO] [2017-12-29 21:58:39][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from ServletContext resource [/WEB-INF/spring-mvc.xml]
+ [INFO] [2017-12-29 21:58:40][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/auth/adminLogin],methods=[GET],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public cn.upc.database.utils.ResultData<java.util.Map<java.lang.String, java.lang.Integer>> cn.upc.database.controller.LoginController.adminLogin()
+ [INFO] [2017-12-29 21:58:40][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+ [INFO] [2017-12-29 21:58:40][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 909 ms
  
