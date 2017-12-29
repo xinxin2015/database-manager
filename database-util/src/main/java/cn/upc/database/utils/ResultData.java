@@ -55,4 +55,12 @@ public class ResultData<T> implements Serializable {
 		this.data = data;
 		this.success = true;
 	}
+	
+	public static <T> ResultData<T> ok (T data) {
+		return new ResultData<T>(data);
+	}
+	
+	public static <T> ResultData<T> error(String msg) {
+		return new ResultData<T>(null, msg, false);
+	}
 }
