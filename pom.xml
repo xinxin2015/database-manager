@@ -52,11 +52,15 @@
 				<artifactId>database-model</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+			<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 			<dependency>
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>
-				<version>5.1.45</version>
+				<version>5.1.38</version>
 			</dependency>
+
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-test</artifactId>
@@ -117,11 +121,11 @@
 				<artifactId>spring-webmvc</artifactId>
 				<version>${srping.version}</version>
 			</dependency>
-			<dependency>  
-            	<groupId>com.fasterxml.jackson.core</groupId>  
-            	<artifactId>jackson-databind</artifactId>  
-            	<version>2.8.5</version>  
-        	</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>2.8.5</version>
+			</dependency>
 			<!-- spring框架包 end -->
 			<!-- mybatis框架包 start -->
 			<dependency>
@@ -194,6 +198,14 @@
 		</dependencies>
 	</dependencyManagement>
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resource</directory>
+				<includes>
+					<include>*</include>
+				</includes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

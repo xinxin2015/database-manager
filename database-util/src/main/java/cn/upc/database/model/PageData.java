@@ -16,6 +16,15 @@ public class PageData<E> implements Serializable {
 	private int startRow;
 	private int endRow;
 	private long totalCount;
+	private int totalPage;
+	public int getTotalPage() {
+		return totalPage;
+	}
+
+	public void setTotalPage(int totalPage) {
+		this.totalPage = totalPage;
+	}
+
 	private List<E> result = new ArrayList<>();
 	
 	public PageData(int pageNum,int pageSize) {
@@ -76,8 +85,10 @@ public class PageData<E> implements Serializable {
 	@Override
 	public String toString() {
 		return "PageData [pageNum=" + pageNum + ", pageSize=" + pageSize + ", startRow=" + startRow + ", endRow="
-				+ endRow + ", totalCount=" + totalCount + ", result=" + result + "]";
+				+ endRow + ", totalCount=" + totalCount + ", totalPage=" + totalPage + ", result=" + result + "]";
 	}
+
+	
 	
 	
 }
