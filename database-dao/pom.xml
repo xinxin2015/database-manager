@@ -100,8 +100,9 @@
 			<resource>
 				<directory>src/main/resource</directory>
 				<includes>
-					<include>*</include>
-				</includes>
+                    <include>*</include>
+                </includes>
+                <filtering>true</filtering>
 			</resource>
 		</resources>
 		<finalName>database-dao</finalName>

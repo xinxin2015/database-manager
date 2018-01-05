@@ -7,6 +7,10 @@ public class ResultData<T> implements Serializable {
 	/**
 	 * 
 	 */
+	public static final String EXCEPTION = "exception";
+	
+	public static final String PASSWORDISWRONG = "用户名或密码错误";
+	
 	private static final long serialVersionUID = -6079119599458665028L;
 
 	private T data;

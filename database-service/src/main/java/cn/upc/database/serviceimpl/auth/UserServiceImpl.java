@@ -14,13 +14,8 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 	
 	@Override
-	public boolean adminLogin(String username, String password) throws Exception {
-		boolean result = false;
-		User user = userDao.adminLogin(username,password);
-		if (user != null) {
-			result = true;
-		}
-		return result;
+	public User adminLogin(String username, String password) throws Exception {
+		return userDao.adminLogin(username,password);
 	}
 
 }

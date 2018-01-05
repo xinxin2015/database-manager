@@ -18,6 +18,8 @@ public class UserDao {
 	
 	public User adminLogin(String username,String password) throws Exception {
 		Map<String, String> map = new HashMap<>();
+		map.put("username", username);
+		map.put("password", password);
 		return temp.selectOne("cn.upc.database.userdao.adminLogin", map);
 	}
 }

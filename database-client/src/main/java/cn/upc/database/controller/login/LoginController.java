@@ -6,12 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.upc.database.controller.base.BaseController;
+import cn.upc.database.model.user.User;
 import cn.upc.database.service.auth.UserService;
 import cn.upc.database.utils.ResultData;
 
 @Controller
 @RequestMapping(value="/auth",method= {RequestMethod.GET,RequestMethod.POST},produces="application/json")
-public class LoginController {
+public class LoginController extends BaseController {
 
 	@Autowired
 	private UserService userService;
@@ -20,14 +22,15 @@ public class LoginController {
 	@ResponseBody
 	public ResultData<Boolean> adminLogin(String username,String password) {
 		try {
-			boolean result = userService.adminLogin(username, password);
-			if (!result) {
-				return ResultData.error("username or password is wrong");
+			User result = userService.adminLogin(username, password);
+			if (result == null) {
+				return ResultData.error(ResultData.PASSWORDISWRONG);
 			}
-			return ResultData.ok(result);
+			session.setAttribute("loginUser", result);
+			return ResultData.ok(true);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return ResultData.error("exception");
+			return ResultData.error(ResultData.EXCEPTION);
 		}
 	}
 	

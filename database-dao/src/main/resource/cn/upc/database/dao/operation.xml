@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd 
+" >
+<mapper namespace="cn.upc.database.userdao.operation">
+	<insert id="addCity" parameterType="java.util.List">
+		begin;
+			insert into city values
+				<foreach collection="list" index="index" item="city">
+					(#{city.id},#{city.name},#{city.code})
+				</foreach>
+		commit;
+	</insert>
+	<select id="getAllCities" resultType="cn.upc.database.model.operation.City">
+		select * from city
+	</select>
+</mapper>
