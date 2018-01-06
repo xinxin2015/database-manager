@@ -13,6 +13,7 @@
 		<plugin interceptor="cn.upc.database.utils.PageQuery" />
 	</plugins>
 	<mappers>
-		<mapper resource="upc/database/dao/user.xml" />
+		<mapper resource="cn/upc/database/dao/user/user.xml" />
+		<mapper resource="cn/upc/database/dao/operation/operation.xml"/>
 	</mappers>
 </configuration>

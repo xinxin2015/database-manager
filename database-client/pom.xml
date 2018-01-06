@@ -84,9 +84,20 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 		<!-- jstl标签类 -->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 		<dependency>
-			<groupId>jstl</groupId>
+			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api -->
+		<dependency>
+			<groupId>javax.servlet.jsp.jstl</groupId>
+			<artifactId>javax.servlet.jsp.jstl-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<!-- log start -->
 		<dependency>
@@ -136,7 +147,7 @@
 	<build>
 		<resources>
 			<resource>
-				<directory>src/main/resource</directory>
+				<directory>src/main/resources</directory>
 				<includes>
 					<include>*</include>
 				</includes>
