@@ -11,7 +11,7 @@ import cn.upc.database.service.operation.OperationService;
 import cn.upc.database.utils.ResultData;
 
 @Controller
-@RequestMapping(value="/admin",method= {RequestMethod.GET,RequestMethod.POST},produces="application/json")
+@RequestMapping(value="/admin",method= {RequestMethod.GET,RequestMethod.POST},produces="application/json;charset=UTF-8")
 public class AdminOperation extends BaseController {
 
 	@Autowired

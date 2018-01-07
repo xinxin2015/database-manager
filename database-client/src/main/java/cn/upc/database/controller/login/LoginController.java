@@ -12,7 +12,7 @@ import cn.upc.database.service.auth.UserService;
 import cn.upc.database.utils.ResultData;
 
 @Controller
-@RequestMapping(value="/auth",method= {RequestMethod.GET,RequestMethod.POST},produces="application/json")
+@RequestMapping(value="/auth",method= {RequestMethod.GET,RequestMethod.POST},produces="application/json;charset=UTF-8")
 public class LoginController extends BaseController {
 
 	@Autowired
