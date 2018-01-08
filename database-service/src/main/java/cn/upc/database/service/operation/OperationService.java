@@ -15,4 +15,8 @@ public interface OperationService {
 	public boolean addCity() throws Exception;
 
 	public boolean addStation(Integer id) throws Exception;
+
+	public String sendRedirect(String url) throws Exception;
+
+	public boolean addLine() throws Exception;
 }

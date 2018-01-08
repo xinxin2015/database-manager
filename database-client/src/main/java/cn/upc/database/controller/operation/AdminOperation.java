@@ -39,12 +39,26 @@ public class AdminOperation extends BaseController {
 			for (int i = 1;i <= 24;i ++) {
 				boolean result = operationService.addStation(i);
 				if (!result) {
-					return ResultData.error("");
+					return ResultData.error("添加站点失败");
 				}
 			}
 			return ResultData.ok(true);
 		} catch (Exception e) {
 			e.printStackTrace();
+			return ResultData.error(ResultData.EXCEPTION);
+		}
+	}
+
+	@RequestMapping("/addLine")
+	@ResponseBody
+	public ResultData<Boolean> addLine() {
+		try {
+			boolean result = operationService.addLine();
+			if (!result) {
+				return ResultData.error("添加路线失败");
+			}
+			return ResultData.ok(true);
+		} catch (Exception e) {
 			return ResultData.error(ResultData.EXCEPTION);
 		}
 	}

@@ -2,6 +2,7 @@ package cn.upc.database.dao.operation;
 
 import java.util.List;
 
+import cn.upc.database.model.operation.Line;
 import cn.upc.database.model.operation.Station;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -31,5 +32,10 @@ public class OperationDao {
 
 	public City getCityByCode(String code) throws Exception {
 		return temp.selectOne("cn.upc.database.userdao.operation.getCityByCode",code);
+	}
+
+	public boolean addLine(Line line) throws Exception {
+		int i = temp.insert("cn.upc.database.userdao.operation.addLine",line);
+		return i > 0;
 	}
 }

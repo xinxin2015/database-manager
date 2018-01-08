@@ -10,10 +10,18 @@
 	</select>
 
 	<insert id="addStation" parameterType="cn.upc.database.model.operation.Station">
-		INSERT INTO station VALUES (NULL,#{name},#{lat},#{lng},#{cityId})
+		INSERT INTO station VALUES (NULL,#{name},#{lat},#{lng},#{category},#{cityId})
 	</insert>
 
 	<select id="getCityByCode" resultType="cn.upc.database.model.operation.City" parameterType="java.lang.String">
 		select * from city where code = #{code}
 	</select>
+
+	<select id="getStationByName" parameterType="java.lang.String" resultType="cn.upc.database.model.operation.Station">
+		SELECT * FROM station where name = #{name}
+	</select>
+
+	<insert id="addLine" parameterType="cn.upc.database.model.operation.Line">
+		INSERT INTO line VALUES (null,#{name},#{category})
+	</insert>
 </mapper>

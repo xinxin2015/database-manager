@@ -1,6 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8" %>
-
+<%
+    String path = request.getContextPath();
+    String serverPort = "";
+    if(request.getServerPort() != 80) {
+        serverPort = ":" + request.getServerPort();
+    }
+    String serverPath = request.getScheme() + "://" + request.getServerName() + serverPort + path + "/";
+    String basePath = serverPath;
+    if(application.getAttribute("basePath") != null && application.getAttribute("basePath") != "") {
+        basePath = application.getAttribute("basePath").toString();
+    }
+    pageContext.setAttribute("basePath", basePath);
+    pageContext.setAttribute("serverPath", serverPath);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +24,14 @@
     <meta name="description" content="青岛公交线路查询,青岛公交地图,青岛公交查询,青岛公交路线查询,青岛公交网,青岛公交车路线查询,青岛公交车线路查询,青岛坐车网,青岛公交查询系统。"/>
     <meta name="applicable-device" content="pc"/>
     <link rel="shortcut icon" href="favicon.ico">
+    <script type="text/javascript">
+        window.Constants = {
+            "basePath" : "${basePath}",
+            "baseResoucePath" : "${baseResoucePath}",
+            "serverPath" : "${serverPath}",
+            "sourceVersion" : "${sourceVersion }"
+        };
+    </script>
     <link rel="stylesheet" type="text/css" href="http://css.8684.cn/citys/v2/css/style.min.css"/>
     <script type="text/javascript" src="http://js.8684.cn/citys/v2/jquery.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/140.js"></script>
@@ -59,11 +80,6 @@
     </div>
 </div>
 <div class="query_module">
-    <div id="auto973adid1231"><span class="close_cz" onclick="$(this).parent('div').hide();"></span>
-    </div>
-    <div id="auto973adid1696">
-        <span class="close_cz" onclick="$(this).parent('div').hide();"></span>
-    </div>
     <div class="query_module_left">
         <span class="act" id="two1" onclick="setTab('two',1,3)">换乘查询</span>
         <span id="two2" onclick="setTab('two',2,3)">线路查询</span>
