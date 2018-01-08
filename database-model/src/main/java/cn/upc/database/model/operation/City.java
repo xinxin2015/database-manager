@@ -8,7 +8,7 @@ public class City implements Serializable {
      *
      */
     private static final long serialVersionUID = -125998059304281711L;
-    private int id;
+    private Integer id;
     private String name;
     private String code;
     private int cityId;
@@ -17,7 +17,7 @@ public class City implements Serializable {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -51,7 +51,7 @@ public class City implements Serializable {
         return cityId;
     }
 
-    public void setCityId(int cityId) {
+    public void setCityId(Integer cityId) {
         this.cityId = cityId;
     }
 }

@@ -13,4 +13,6 @@ public interface OperationService {
 	public List<City> getAllCity() throws Exception;
 	
 	public boolean addCity() throws Exception;
+
+	public boolean addStation(Integer id) throws Exception;
 }

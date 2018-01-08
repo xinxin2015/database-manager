@@ -23,7 +23,7 @@ public class AdminOperation extends BaseController {
 		try {
 			boolean result = operationService.addCity();
 			if (!result) {
-				return ResultData.error("Ìí¼Ó³ÇÊÐÊ§°Ü");
+				return ResultData.error("æ·»åŠ åŸŽå¸‚å¤±è´¥");
 			}
 			return ResultData.ok(true);
 		} catch (Exception e) {
@@ -31,5 +31,21 @@ public class AdminOperation extends BaseController {
 			return ResultData.error("exception");
 		}
 	}
-	
+
+	@RequestMapping("/addStation")
+	@ResponseBody
+	public ResultData<Boolean> addStation() {
+		try {
+			for (int i = 1;i <= 24;i ++) {
+				boolean result = operationService.addStation(i);
+				if (!result) {
+					return ResultData.error("");
+				}
+			}
+			return ResultData.ok(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResultData.error(ResultData.EXCEPTION);
+		}
+	}
 }
