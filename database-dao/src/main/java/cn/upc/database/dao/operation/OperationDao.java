@@ -58,4 +58,8 @@ public class OperationDao {
 	    int i = temp.insert("cn.upc.database.userdao.operation.addTransit",transit);
 	    return i > 0;
     }
+
+    public List<String> getLines(String lineName) throws Exception {
+		return temp.selectList("cn.upc.database.userdao.operation.getLines",lineName);
+	}
 }

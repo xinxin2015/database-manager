@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.upc.database.userdao.operation">
-	<insert id="addCity" parameterType="cn.upc.database.model.operation.City">
+    <insert id="addCity" parameterType="cn.upc.database.model.operation.City">
 		insert into city values (null,#{name},#{code},#{cityId})
 	</insert>
-	<select id="getAllCities" resultType="cn.upc.database.model.operation.City">
+    <select id="getAllCities" resultType="cn.upc.database.model.operation.City">
 		select * from city
 	</select>
 
-	<insert id="addStation" parameterType="cn.upc.database.model.operation.Station">
+    <insert id="addStation" parameterType="cn.upc.database.model.operation.Station">
 		INSERT INTO station VALUES (NULL,#{name},#{lat},#{lng},#{category},#{cityId})
 	</insert>
 
-	<select id="getCityByCode" resultType="cn.upc.database.model.operation.City" parameterType="java.lang.String">
+    <select id="getCityByCode" resultType="cn.upc.database.model.operation.City" parameterType="java.lang.String">
 		select * from city where code = #{code}
 	</select>
 
-	<select id="getStationByName" parameterType="java.lang.String" resultType="cn.upc.database.model.operation.Station">
+    <select id="getStationByName" parameterType="java.lang.String" resultType="cn.upc.database.model.operation.Station">
 		SELECT * FROM station where name = #{name}
 	</select>
 
-	<insert id="addLine" parameterType="cn.upc.database.model.operation.Line">
+    <insert id="addLine" parameterType="cn.upc.database.model.operation.Line">
 		INSERT INTO line VALUES (null,#{name},#{category})
 	</insert>
 
-	<select id="getLineByCategory" parameterType="java.lang.String" resultType="cn.upc.database.model.operation.Line">
+    <select id="getLineByCategory" parameterType="java.lang.String" resultType="cn.upc.database.model.operation.Line">
 		SELECT * FROM line WHERE category = #{category}
 	</select>
 
@@ -37,11 +37,23 @@
         SELECT * FROM line WHERE name = #{name}
     </select>
 
-    <insert id="addTransit" parameterType="cn.upc.database.model.operation.Transit" keyProperty="id" useGeneratedKeys="true">
+    <insert id="addTransit" parameterType="cn.upc.database.model.operation.Transit" keyProperty="id"
+            useGeneratedKeys="true">
         INSERT INTO transit VALUES
         (
         null,#{lineId},#{startStation},#{endStation},#{startTime},#{endTime},#{price},#{maxPrice}
         ,#{cityId},#{type}
         )
     </insert>
+
+    <select id="getLines" parameterType="java.lang.String" resultType="java.lang.String">
+		SELECT station.name FROM station
+		LEFT JOIN rote ON station.`id` = rote.`stationId`
+        LEFT JOIN transit ON rote.`transitId` = transit.`id`
+        LEFT JOIN line ON transit.`lineId` = line.`id`
+        WHERE rote.`position` IS NOT NULL AND
+        rote.`transitId` IS NOT NULL AND
+        transit.`lineId`IS NOT NULL AND
+        line.`name`= #{lineName}
+	</select>
 </mapper>

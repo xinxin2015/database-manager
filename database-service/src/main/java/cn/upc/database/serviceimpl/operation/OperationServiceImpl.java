@@ -278,4 +278,9 @@ public class OperationServiceImpl implements OperationService {
 
         return operationDao.getStationByName(name);
     }
+
+    @Override
+    public List<String> getLines(String lineName) throws Exception {
+        return operationDao.getLines(lineName);
+    }
 }

@@ -1,3 +1,4 @@
-SELECT * FROM station
-WHERE station.id IN (SELECT rote.stationId FROM rote WHERE rote.transitId IN
-(SELECT transit.id FROM transit WHERE transit.lineId IN (SELECT line.id FROM line WHERE line.`name` = '开发区1路')))
+SELECT station.name FROM station LEFT JOIN rote ON station.`id` = rote.`stationId`
+LEFT JOIN transit ON rote.`transitId` = transit.`id` LEFT JOIN line ON transit.`lineId` = line.`id`
+WHERE rote.`position` IS NOT NULL AND rote.`transitId` IS NOT NULL AND transit.`lineId`
+IS NOT NULL AND line.`name`='开发区4路'

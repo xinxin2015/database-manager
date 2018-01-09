@@ -36,6 +36,7 @@
     <script type="text/javascript" src="http://js.8684.cn/citys/v2/jquery.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/140.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/base.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
 </head>
 <body></body>
 </div>
@@ -86,7 +87,7 @@
         <span id="two3" onclick="setTab('two',3,3)">站点查询</span>
     </div>
     <div class="query_module_right">
-        <form action="/so.php" onsubmit="return check_bus_p2p()">
+        <form onsubmit="return check_bus_p2p()">
             <input type="hidden" name="k" value="p2p"/>
             <div class="query_results" id="con_two_1">
                 <div class="query_text_l">
@@ -129,7 +130,7 @@
                 </div>
             </div>
         </form>
-        <form action="/so.php" onsubmit="return check_bus_pp()">
+        <form onsubmit="return check_bus_pp()">
             <input type="hidden" name="k" value="pp"/>
             <div class="query_results hidden" id="con_two_2">
                 <div class="route_query">
@@ -149,7 +150,7 @@
                 </div>
             </div>
         </form>
-        <form action="/so.php" onsubmit="return check_bus_p()">
+        <form onsubmit="return check_bus_p()">
             <input type="hidden" name="k" value="p"/>
             <div class="query_results hidden" id="con_two_3">
                 <div class="route_query">
