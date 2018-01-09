@@ -1,0 +1,3 @@
+SELECT * FROM station
+WHERE station.id IN (SELECT rote.stationId FROM rote WHERE rote.transitId IN
+(SELECT transit.id FROM transit WHERE transit.lineId IN (SELECT line.id FROM line WHERE line.`name` = '开发区1路')))

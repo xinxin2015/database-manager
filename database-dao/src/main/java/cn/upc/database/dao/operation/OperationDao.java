@@ -2,12 +2,10 @@ package cn.upc.database.dao.operation;
 
 import java.util.List;
 
-import cn.upc.database.model.operation.Line;
-import cn.upc.database.model.operation.Station;
+import cn.upc.database.model.operation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import cn.upc.database.model.operation.City;
 import cn.upc.database.utils.MySqlSessionTemplate;
 
 @Repository
@@ -38,4 +36,26 @@ public class OperationDao {
 		int i = temp.insert("cn.upc.database.userdao.operation.addLine",line);
 		return i > 0;
 	}
+
+	public List<Line> getLineByCategory(String category) throws Exception {
+		return temp.selectList("cn.upc.database.userdao.operation.getLineByCategory",category);
+	}
+
+	public Station getStationByName(String name) throws Exception {
+		return temp.selectOne("cn.upc.database.userdao.operation.getStationByName",name);
+	}
+
+	public boolean addRote(Rote rote) throws Exception {
+	    int i = temp.insert("cn.upc.database.userdao.operation.addRote",rote);
+	    return i > 0;
+    }
+
+    public Line getLineByName(String name) throws Exception {
+	    return temp.selectOne("cn.upc.database.userdao.operation.getLineByName",name);
+    }
+
+    public boolean addTransit(Transit transit) throws Exception {
+	    int i = temp.insert("cn.upc.database.userdao.operation.addTransit",transit);
+	    return i > 0;
+    }
 }

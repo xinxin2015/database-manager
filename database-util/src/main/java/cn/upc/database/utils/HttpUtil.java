@@ -1,9 +1,6 @@
 package cn.upc.database.utils;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
@@ -24,6 +21,8 @@ public class HttpUtil {
             connection.setRequestProperty("user-agent",
                     "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
             // 建立实际的连接
+			connection.setRequestProperty("Accept-Charset", "UTF-8");
+			connection.setRequestProperty("contentType", "UTF-8");
             connection.connect();
          // 获取所有响应头字段
             Map<String, List<String>> map = connection.getHeaderFields();
@@ -67,8 +66,10 @@ public class HttpUtil {
             // 发送POST请求必须设置如下两行
             conn.setDoOutput(true);
             conn.setDoInput(true);
+			conn.setRequestProperty("Accept-Charset", "UTF-8");
+			conn.setRequestProperty("contentType", "UTF-8");
             // 获取URLConnection对象对应的输出流
-            out = new PrintWriter(conn.getOutputStream());
+            out = new PrintWriter(new OutputStreamWriter(conn.getOutputStream(),"utf-8"));
             // 发送请求参数
             out.print(param);
             // flush输出流的缓冲

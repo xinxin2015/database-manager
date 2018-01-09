@@ -24,4 +24,24 @@
 	<insert id="addLine" parameterType="cn.upc.database.model.operation.Line">
 		INSERT INTO line VALUES (null,#{name},#{category})
 	</insert>
+
+	<select id="getLineByCategory" parameterType="java.lang.String" resultType="cn.upc.database.model.operation.Line">
+		SELECT * FROM line WHERE category = #{category}
+	</select>
+
+    <insert id="addRote" parameterType="cn.upc.database.model.operation.Rote">
+        INSERT INTO rote VALUES (NULL,#{stationId},#{transitId},#{position})
+    </insert>
+
+    <select id="getLineByName" parameterType="java.lang.String" resultType="cn.upc.database.model.operation.Line">
+        SELECT * FROM line WHERE name = #{name}
+    </select>
+
+    <insert id="addTransit" parameterType="cn.upc.database.model.operation.Transit" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO transit VALUES
+        (
+        null,#{lineId},#{startStation},#{endStation},#{startTime},#{endTime},#{price},#{maxPrice}
+        ,#{cityId},#{type}
+        )
+    </insert>
 </mapper>

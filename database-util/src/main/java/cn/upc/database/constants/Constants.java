@@ -6,5 +6,7 @@ public class Constants {
 	public static final String CITY_URL = "http://api.jisuapi.com/transit/city";
 	public static final String LINE_URL = "http://api.jisuapi.com/transit/line";
 	public static final String STATION_URL = "http://api.jisuapi.com/transit/station";
+	public static final String MY_URL = "http://qingdao.8684.cn/so.php";
+
 
 }
