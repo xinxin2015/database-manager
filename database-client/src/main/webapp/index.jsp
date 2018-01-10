@@ -183,11 +183,14 @@
             <div class="bus_line_site" id="bus_line_site">
 
             </div>
-            <div class="bus_site_top">
-                <a id="bus_site_518-1" class="bus_site_tt1 ">新区旅游专线L1路
-                </a>
-            </div>
         </div>
     </div>
+</div>
+<div class="cr_content_plan">
+    <div class="cr_plan_layer" id="change_plan">
+
+    </div>
+</div>
+<div class="bus_site_top" id="bus_site_stop">
 </div>
 </html>

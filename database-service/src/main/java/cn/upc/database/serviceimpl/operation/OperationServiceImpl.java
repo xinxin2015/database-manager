@@ -288,4 +288,54 @@ public class OperationServiceImpl implements OperationService {
     public List<String> getLinesByStation(String stationName) throws Exception {
         return operationDao.getLinesByStation(stationName);
     }
+
+    @Override
+    public List<InquiryT1M> getChangeLine(
+            String startStation, String endStation) throws Exception {
+        List<InquiryT1M> inquiry = new ArrayList<>();
+        Station start = this.getStationByName(startStation);
+        if (start == null) {
+            System.out.println("查询站点失败，该站点不存在，station = "
+                    + startStation);
+            return null;
+        }
+        Station end = this.getStationByName(endStation);
+        if (end == null) {
+            System.out.println("查询站点失败，该站点不存在，station = "
+                    + startStation);
+            return null;
+        }
+        List<InquiryT1> result = operationDao.getChangeLine(start.getId(),end.getId());
+        System.out.println(result);
+
+        for (InquiryT1 elem : result) {
+            InquiryT1M in = new InquiryT1M();
+            in.setStart(start);
+            in.setEnd(end);
+            Line line1 = operationDao.getLineByTransitId(elem.getLine1());
+            if (line1 == null) {
+                System.out.println("查询线路失败，该线路不存在，transitId = "
+                        + elem.getLine1());
+                return null;
+            }
+            in.setLine1(line1);
+            Line line2 = operationDao.getLineByTransitId(elem.getLine2());
+            if (line2 == null) {
+                System.out.println("查询线路失败，该线路不存在，transitId = "
+                        + elem.getLine2());
+                return null;
+            }
+            in.setLine2(line2);
+            Station rote = operationDao.getStationById(elem.getRote());
+            if (rote == null) {
+                System.out.println("查询站点失败，该站点不存在，stationId = " +
+                elem.getRote());
+            }
+            in.setRote(rote);
+            in.setCount(elem.gettCount());
+            inquiry.add(in);
+        }
+
+        return inquiry;
+    }
 }

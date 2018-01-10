@@ -2,12 +2,8 @@ package cn.upc.database.service.operation;
 
 import java.util.List;
 
-import cn.upc.database.model.operation.Line;
-import cn.upc.database.model.operation.Rote;
-import cn.upc.database.model.operation.Station;
+import cn.upc.database.model.operation.*;
 import org.springframework.stereotype.Service;
-
-import cn.upc.database.model.operation.City;
 
 @Service
 public interface OperationService {
@@ -37,5 +33,7 @@ public interface OperationService {
 
 	public List<String> getLinesByStation(String stationName) throws Exception;
 
+	public List<InquiryT1M> getChangeLine(String startStation
+			, String endStation) throws Exception;
 
 }

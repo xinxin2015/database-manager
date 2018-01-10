@@ -6,3 +6,100 @@ IS NOT NULL AND line.`name`='开发区4路'
 SELECT line.`name` FROM station LEFT JOIN rote ON station.id = rote.`stationId` LEFT JOIN
 transit ON rote.`transitId` = transit.`id` LEFT JOIN line ON transit.`lineId` = line.`id`
 WHERE rote.`transitId` IS NOT NULL AND transit.`lineId` IS NOT NULL AND line.`name` IS NOT NULL AND station.`name` = '石油大学北门'
+
+DELIMITER $$
+
+CREATE
+    /*[DEFINER = { user | CURRENT_USER }]*/
+    PROCEDURE `busline`.`InquiryT1`(IN startStop INT,IN endStop INT)
+
+    BEGIN
+	SELECT
+		r1.startStop AS startId,
+		r1.rote AS line1,
+		r1.endStop AS rote,
+		r2.rote AS line2,
+		r2.endStop AS endId,
+		r1.stopCount + r2.stopCount AS tCount
+	FROM
+		roteT0 r1,
+		roteT0 r2
+	WHERE
+		r1.startStop = startStop
+		AND r1.endStop = r2.startStop
+		AND r2.endStop = endStop;
+
+    END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE
+    /*[DEFINER = { user | CURRENT_USER }]*/
+    PROCEDURE `busline`.`InquiryT2`(IN startStop INT,IN endStop INT)
+
+    BEGIN
+	SELECT
+		r1.startStop AS startId,
+		r1.rote AS line1,
+		r1.endStop AS rote1,
+		r2.rote AS line2,
+		r2.endStop AS rote2,
+		r3.rote AS line3,
+		r3.endStop AS endId,
+		r1.stopCount + r2.stopCount + r3.stopCount AS tCount
+	FROM
+		roteT0 r1,
+		roteT0 r2,
+		roteT0 r3
+	WHERE
+		r1.startStop = startStop
+		AND r1.endStop = r2.startStop
+		AND r2.endStop = r3.startStop
+		AND r3.endStop = endStop;
+    END$$
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE
+    /*[DEFINER = { user | CURRENT_USER }]*/
+    PROCEDURE `busline`.`InquiryT0`(IN startStop INT,IN endStop INT)
+
+    BEGIN
+	SELECT
+		r1.stationId AS startId,
+		r2.stationId  AS endId,
+		r1.transitId  AS line,
+		r2.position - r1.position AS stationCount
+	FROM
+		rote r1,
+		rote r2
+	WHERE
+		r1.transitId = r2.stationId
+		AND r1.position < r2.position
+		AND r1.stationId = startStop
+		AND r2.stationId = endStop;
+    END;
+    //
+
+DELIMITER ;
+
+
+CREATE
+    /*[ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}]
+    [DEFINER = { user | CURRENT_USER }]
+    [SQL SECURITY { DEFINER | INVOKER }]*/
+    VIEW `busline`.`roteT0`
+    AS
+    SELECT
+	r1.stationId AS startStop,
+	r2.stationId AS endStop,
+	r1.transitId AS rote,
+	r2.position - r1.position AS stopCount
+    FROM rote r1,
+	 rote r2
+    WHERE r1.transitId = r2.transitId
+    AND r1.position < r2.position

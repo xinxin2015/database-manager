@@ -57,7 +57,7 @@
         line.`name`= #{lineName}
 	</select>
     
-    <select id="getLinesByStationName" parameterType="java.lang.String" resultType="java.lang.String">
+    <select id="getLinesByStation" parameterType="java.lang.String" resultType="java.lang.String">
         SELECT line.`name` FROM station 
         LEFT JOIN rote ON station.id = rote.`stationId` 
         LEFT JOIN transit ON rote.`transitId` = transit.`id` 
@@ -66,5 +66,21 @@
         transit.`lineId` IS NOT NULL AND 
         line.`name` IS NOT NULL AND 
         station.`name` = #{stationName}
+    </select>
+
+    <select id="getChangeLine" parameterType="map" resultType="cn.upc.database.model.operation.InquiryT1"
+            statementType="CALLABLE">
+        call InquiryT1(#{startId},#{endId})
+    </select>
+
+    <select id="getLineByTransitId" parameterType="int" resultType="cn.upc.database.model.operation.Line">
+        SELECT line.* FROM line
+        LEFT JOIN transit
+        ON line.`id` = transit.`lineId`
+        WHERE transit.`id` = #{transitId}
+    </select>
+
+    <select id="getStationById" parameterType="int" resultType="cn.upc.database.model.operation.Station">
+        SELECT * FROM station WHERE id = #{id}
     </select>
 </mapper>

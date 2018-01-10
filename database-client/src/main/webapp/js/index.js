@@ -14,9 +14,15 @@ $(function () {
             });
         },
         submit_line : function () {
-            $("#bus_line_content").show();
+            $("#change_plan").hide();
+            $("#bus_site_stop").hide();
+            $("#bus_line_site").show();
             $("#bus_line_site").empty();
             var lineName = $.trim($("#origin_1").val());
+            if (lineName == "") {
+                myAlert("错误提示","线路名称不能为空",null);
+                return;
+            }
             $.ajax({
                 type: "POST",
                 url: Constants.serverPath + "op/getLines.do",
@@ -51,13 +57,110 @@ $(function () {
             });
         },
         submit_change : function () {
-            alert("submit_change");
+            $("#change_plan").show();
+            $("#bus_line_site").hide();
+            $("#bus_site_stop").hide();
+            $("#change_plan").empty();
+            var startStation = $.trim($("#origin").val());
+            var endStation = $.trim($("#destination").val());
+            if (startStation == "") {
+                myAlert("错误提示","起点不能为空",null);
+                return;
+            }
+            if (endStation == "") {
+                myAlert("错误提示","终点不能为空",null);
+                return;
+            }
+            $.ajax({
+                type: "POST",
+                url: Constants.serverPath + "op/getChangeLine.do",
+                data: {"startStation" : startStation,
+                "endStation":endStation},
+                dataType: "json",
+                async : false,
+                success: function(data){
+                    var result = data.data;
+                    console.log(result);
+                    if (!data.success) {
+                        var errorMsg = data.message;
+                        myAlert("错误提示",errorMsg,function () {
+                            window.location.href = Constants.serverPath + "index.jsp";
+                        });
+                        return;
+                    }
+                    var list = result.list;
+                    console.log(list);
+                    var html = "";
+                    for (var i = 0;i <list.length;i ++) {
+                        html += "<div class='cr_plan_top'><span class='cr_plan_img'>" + "方案" + (i + 1) + "</span>";
+                        html += "</div>";
+                        html += "<div class='cr_plan_results'>" + "途经" + list[i].count + "个站点</div>";
+                        html += "<div class='cr_plan_content'>";
+                        html += '<div class="cr_plan_c2">';
+                        html += '<div class="busline_star">';
+                        html += '<div class="busline_bg"><a class="cr_plan_link1">' + list[i].start.name + '</a></div>';
+                        html += '</div>';
+                        html += '<div class="busline_line"><a class="cr_plan_link2">' + list[i].line1.name + '</a></div>';
+                        html += '<div class="busline_site">';
+                        html += '<div class="busline_bg"><a class="cr_plan_link1">' + list[i].rote.name + '</a></div>';
+                        html += '</div>';
+                        html += '<div class="busline_line"><a class="cr_plan_link2">' + list[i].line2.name + '</a>';
+                        html += '</div>';
+                        html += '<div class="busline_end">';
+                        html += '<div class="busline_bg"><a class="cr_plan_link1">' + list[i].end.name + '</a></div>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '<br>';
+                    }
+                    $("#change_plan").html(html);
+                },
+                error : function () {
+                    alert("系统错误，请联系管理员");
+                }
+            });
         },
+
         submit_station : function () {
-            alert("submit_station");
+            $("#change_plan").hide();
+            $("#bus_line_site").hide();
+            $("#bus_site_stop").show();
+            $("#bus_site_stop").empty();
+            var stationName = $.trim($("#origin_2").val());
+            if (stationName == "") {
+                myAlert("错误提示","站点名称不能为空",null);
+                return;
+            }
+            $.ajax({
+                type: "POST",
+                url: Constants.serverPath + "op/getLinesByStation.do",
+                data: {"stationName" : stationName},
+                dataType: "json",
+                async : false,
+                success: function(data){
+                    var result = data.data;
+                    console.log(result);
+                    if (!data.success) {
+                        var errorMsg = data.message;
+                        myAlert("错误提示",errorMsg,function () {
+                            window.location.href = Constants.serverPath + "index.jsp";
+                        });
+                        return;
+                    }
+                    var html = "";
+                    for (var i = 0;i < result.length;i ++) {
+                        html += "<a class=''>" + result[i] + "</a>";
+                        html +="<br>";
+                    }
+                    $("#bus_site_stop").html(html);
+                },
+                error : function () {
+                    alert("系统错误，请联系管理员");
+                }
+            });
         },
         init : function () {
-            $("#bus_line_content").hide();
+            $("#bus_site_stop").hide();
         }
     };
     pageFun.init();

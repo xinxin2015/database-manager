@@ -1,6 +1,8 @@
 package cn.upc.database.dao.operation;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import cn.upc.database.model.operation.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,5 +67,21 @@ public class OperationDao {
 
 	public List<String> getLinesByStation(String stationName) throws Exception {
 	    return temp.selectList("cn.upc.database.userdao.operation.getLinesByStation",stationName);
+    }
+
+    public List<InquiryT1> getChangeLine(Integer startId,Integer endId) throws Exception {
+		Map<String,Integer> map = new HashMap<>();
+		map.put("startId",startId);
+		map.put("endId",endId);
+		return temp.selectList("cn.upc.database.userdao.operation.getChangeLine",map);
+	}
+
+	public Line getLineByTransitId(Integer transitId) throws Exception {
+	    return temp.selectOne("cn.upc.database.userdao.operation.getLineByTransitId",
+                transitId);
+    }
+
+    public Station getStationById(Integer id) throws Exception {
+	    return temp.selectOne("cn.upc.database.userdao.operation.getStationById",id);
     }
 }
