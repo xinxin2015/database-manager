@@ -62,4 +62,8 @@ public class OperationDao {
     public List<String> getLines(String lineName) throws Exception {
 		return temp.selectList("cn.upc.database.userdao.operation.getLines",lineName);
 	}
+
+	public List<String> getLinesByStation(String stationName) throws Exception {
+	    return temp.selectList("cn.upc.database.userdao.operation.getLinesByStation",stationName);
+    }
 }

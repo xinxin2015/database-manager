@@ -35,5 +35,7 @@ public interface OperationService {
 
 	public List<String> getLines(String lineName) throws Exception;
 
+	public List<String> getLinesByStation(String stationName) throws Exception;
+
 
 }

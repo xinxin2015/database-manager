@@ -3,12 +3,12 @@
 <%
     String path = request.getContextPath();
     String serverPort = "";
-    if(request.getServerPort() != 80) {
+    if (request.getServerPort() != 80) {
         serverPort = ":" + request.getServerPort();
     }
     String serverPath = request.getScheme() + "://" + request.getServerName() + serverPort + path + "/";
     String basePath = serverPath;
-    if(application.getAttribute("basePath") != null && application.getAttribute("basePath") != "") {
+    if (application.getAttribute("basePath") != null && application.getAttribute("basePath") != "") {
         basePath = application.getAttribute("basePath").toString();
     }
     pageContext.setAttribute("basePath", basePath);
@@ -26,10 +26,10 @@
     <link rel="shortcut icon" href="favicon.ico">
     <script type="text/javascript">
         window.Constants = {
-            "basePath" : "${basePath}",
-            "baseResoucePath" : "${baseResoucePath}",
-            "serverPath" : "${serverPath}",
-            "sourceVersion" : "${sourceVersion }"
+            "basePath": "${basePath}",
+            "baseResoucePath": "${baseResoucePath}",
+            "serverPath": "${serverPath}",
+            "sourceVersion": "${sourceVersion }"
         };
     </script>
     <link rel="stylesheet" type="text/css" href="http://css.8684.cn/citys/v2/css/style.min.css"/>
@@ -106,7 +106,7 @@
                     <span class="switch" id="switch" onclick="query_tab()"></span>
                 </div>
                 <div class="query_text_r">
-                    <input type="submit" value="查询" class="query_button" id="submit_change"/>
+                    <input type="button" value="查询" class="query_button" id="submit_change"/>
                 </div>
                 <div class="query_text_bottom">
                     <div class="left">
@@ -145,7 +145,7 @@
                         </dl>
                     </div>
                     <div class="query_text_r">
-                        <input type="submit" value="查询" class="query_button" id="submit_line"/>
+                        <input type="button" value="查询" class="query_button" id="submit_line"/>
                     </div>
                 </div>
             </div>
@@ -165,12 +165,29 @@
                         </dl>
                     </div>
                     <div class="query_text_r">
-                        <input type="submit" value="查询" class="query_button" id="submit_station"/>
+                        <input type="button" value="查询" class="query_button" id="submit_station"/>
                     </div>
                 </div>
             </div>
         </form>
         <ul class="citybusTipul"></ul>
+    </div>
+</div>
+<div class="bus_classification cr_content">
+    <div class="left">
+        <div class="cr_content_tips">
+            <span class="cr_content_home"></span>
+            <a href="index.jsp" class="cr_crumbs_txt">青岛公交查询</a>&gt;
+        </div>
+        <div class="bus_line_content" id="bus_line_content">
+            <div class="bus_line_site" id="bus_line_site">
+
+            </div>
+            <div class="bus_site_top">
+                <a id="bus_site_518-1" class="bus_site_tt1 ">新区旅游专线L1路
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 </html>
